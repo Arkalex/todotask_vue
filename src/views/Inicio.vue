@@ -10,7 +10,7 @@
                 <router-link :to="{name: 'editar', params: {id: item.id}}">
                     <button>Editar</button>
                 </router-link>
-                
+                <button @click="eliminarTarea(item.id)">Eliminar</button>
             </li>
         </ul>
     </div>
@@ -21,7 +21,7 @@ import {mapActions, mapState} from 'vuex'
 export default {
     name: 'Inicio',
     methods: {
-        ...mapActions(['getTareas'])
+        ...mapActions(['getTareas', 'eliminarTarea'])
     },
     created(){
         this.getTareas();
